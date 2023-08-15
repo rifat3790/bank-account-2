@@ -23,14 +23,14 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
 
     const currentBalanceAmount = balanceAmount - newWithdrawTotalAmount;
     
-
+    withdrawTotal.value = '';
     if(isNaN(newWithdrawTotalAmount)){
         return alert("This is not a Number. Please enter valid Number.")
     }
     else if (newWithdrawTotalAmount < 0){
-        return alert("Negative withdraw amount is not possible. Please enter positive withdraw amount.")
+        return alert("Negative withdraw amount is not possible. Please enter positive withdraw amount.");
     }
-    else if(newWithdrawTotalAmount > currentBalanceAmount){
+    else if(newWithdrawTotalAmount > balanceAmount){
         return alert("Insufficient balance. Please waiting for deposit.")
     }
     else{
@@ -41,6 +41,6 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
 
 
 
-    withdrawTotal.value = '';
+    
 
 })
